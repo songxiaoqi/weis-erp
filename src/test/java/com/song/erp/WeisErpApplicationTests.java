@@ -1,4 +1,4 @@
-package com.song.erp.weiserp;
+package com.song.erp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

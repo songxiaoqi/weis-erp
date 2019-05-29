@@ -1,4 +1,4 @@
-package com.song.erp.weiserp;
+package com.song.erp;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
