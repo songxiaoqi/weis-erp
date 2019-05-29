@@ -3,7 +3,7 @@ package com.song.erp.bean;
 import java.io.Serializable;
 import java.util.Date;
 
-public class DongErpUser implements Serializable {
+public class User implements Serializable {
 
 
     private static final long serialVersionUID = 4326157188213317264L;
@@ -88,5 +88,19 @@ public class DongErpUser implements Serializable {
 
     public void setToken(String token) {
         this.token = token == null ? null : token.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", sex=" + sex +
+                ", cardId='" + cardId + '\'' +
+                ", name='" + name + '\'' +
+                ", birthday=" + birthday +
+                ", account='" + account + '\'' +
+                ", password='" + password + '\'' +
+                ", token='" + token + '\'' +
+                '}';
     }
 }

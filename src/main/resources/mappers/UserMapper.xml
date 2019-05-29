@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.song.erp.mapper.DongErpUserMapper" >
-  <resultMap id="BaseResultMap" type="com.song.erp.bean.DongErpUser" >
+<mapper namespace="com.song.erp.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.song.erp.bean.User" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="sex" property="sex" jdbcType="INTEGER" />
     <result column="card_id" property="cardId" jdbcType="VARCHAR" />
@@ -17,23 +17,23 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
-    from dong_erp_user
+    from user
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
-    delete from dong_erp_user
+    delete from user
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.song.erp.bean.DongErpUser" >
-    insert into dong_erp_user (id, sex, card_id, name, 
+  <insert id="insert" parameterType="com.song.erp.bean.User" >
+    insert into user (id, sex, card_id, name,
       birthday, account, password, 
       token)
     values (#{id,jdbcType=BIGINT}, #{sex,jdbcType=BIT}, #{cardId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
       #{birthday,jdbcType=DATE}, #{account,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{token,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.song.erp.bean.DongErpUser" >
-    insert into dong_erp_user
+  <insert id="insertSelective" parameterType="com.song.erp.bean.User" >
+    insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -87,8 +87,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.song.erp.bean.DongErpUser" >
-    update dong_erp_user
+  <update id="updateByPrimaryKeySelective" parameterType="com.song.erp.bean.User" >
+    update user
     <set >
       <if test="sex != null" >
         sex = #{sex,jdbcType=BIT},
@@ -114,8 +114,8 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.song.erp.bean.DongErpUser" >
-    update dong_erp_user
+  <update id="updateByPrimaryKey" parameterType="com.song.erp.bean.User" >
+    update user
     set sex = #{sex,jdbcType=BIT},
       card_id = #{cardId,jdbcType=VARCHAR},
       name = #{name,jdbcType=VARCHAR},
